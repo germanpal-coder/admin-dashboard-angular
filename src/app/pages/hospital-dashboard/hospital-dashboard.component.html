@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+
+  <mat-tree
+    [dataSource]="dataSource"
+    [treeControl]="treeControl"
+    class="hospital-tree">
+
+    <!-- Node with children -->
+    <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+      <div class="tree-node">
+        <button mat-icon-button matTreeNodeToggle>
+          <mat-icon>
+            {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+          </mat-icon>
+        </button>
+        <span class="node-label">{{ node.name }}</span>
+      </div>
+
+      <div [class.tree-invisible]="!treeControl.isExpanded(node)">
+        <ng-container matTreeNodeOutlet></ng-container>
+      </div>
+    </mat-nested-tree-node>
+
+    <!-- Leaf node -->
+    <mat-tree-node *matTreeNodeDef="let node">
+      <div class="tree-node leaf" (click)="onNodeClick(node)">
+        <mat-icon class="leaf-icon">business</mat-icon>
+        <span class="node-label">{{ node.name }}</span>
+      </div>
+    </mat-tree-node>
+
+  </mat-tree>
+
+</div>

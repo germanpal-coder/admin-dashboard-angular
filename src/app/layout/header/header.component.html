@@ -1,0 +1,56 @@
+<!--mat-toolbar color="primary" class="mat-toolbar">
+  <button mat-icon-button (click)="toggleSidenav.emit()"  class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar-->
+
+<mat-toolbar class="mat-toolbar">
+  <div class="header-left">
+    <button mat-icon-button (click)="toggleSidenav.emit()" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    
+    <div class="logo-wrapper">
+      <img src="logo.png" alt="MediApp Logo" class="brand-logo">
+    </div>
+
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="header-right">
+    <div class="actions-wrapper">
+      <button mat-icon-button matTooltip="Notificaciones" class="action-btn">
+        <mat-icon badge="3" matBadgeColor="warn">notifications</mat-icon>
+      </button>
+      
+      <button mat-icon-button matTooltip="Ayuda" class="action-btn">
+        <mat-icon>help_outline</mat-icon>
+      </button>
+    </div>
+
+    <button mat-button [matMenuTriggerFor]="userMenu" class="user-btn">
+      <div class="user-meta">
+        <span class="user-name">Dr. García</span>
+        <span class="user-status">En línea</span>
+      </div>
+      <div class="avatar-circle">
+        <mat-icon>account_circle</mat-icon>
+      </div>
+      <mat-icon class="chevron">expand_more</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu" xPosition="before" class="profile-menu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Mi Perfil</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item>
+        <mat-icon color="warn">logout</mat-icon>
+        <span>Cerrar Sesión</span>
+      </button>
+    </mat-menu>
+  </div>
+
+</mat-toolbar>

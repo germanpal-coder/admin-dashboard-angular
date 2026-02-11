@@ -1,0 +1,150 @@
+/*.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height) !important;
+  background-color:  var(--header-background-color);;
+  color: var(--header-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
+.spacer {
+  flex: 1;
+}*/
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height) !important;
+  background-color: var(--header-background-color);
+  color: var(--header-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%; // Para que el flex center funcione respecto al header
+
+    .brand-logo {
+      object-fit: contain; // Asegura que no se deforme si escalas el header
+      display: block;
+      cursor: pointer;
+      
+      // Filtro opcional: si el logo es oscuro y tu header es oscuro, 
+      // podés usar filter: brightness(0) invert(1); para hacerlo blanco.
+    }
+  }
+}
+
+.spacer { flex: 1; }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px; // Espacio entre los dos botones de íconos
+    border-right: 1px solid #e2e8f0; // Línea divisoria sutil
+    padding-right: 16px;
+
+    .action-btn {
+      color: #64748b; // Un gris azulado suave para no distraer
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--color-accent); // Se ilumina con tu turquesa al pasar el mouse
+        background-color: rgba(0, 191, 165, 0.05);
+      }
+      
+      mat-icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  // Seleccionamos el botón de Material para resetear sus internos
+  .user-btn {
+    height: 54px !important; // Ajustado para que luzca bien en un header de 100px
+    line-height: normal !important;
+    padding: 0 12px 0 16px !important;
+    border-radius: 30px !important;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+
+    // Esto es clave: Material usa un span interno para el contenido
+    ::ng-deep .mdc-button__label {
+      display: flex !important;
+      align-items: center !important;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.03) !important;
+    }
+
+    .user-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: right;
+      margin-right: 12px;
+
+      .user-name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--color-text);
+        display: block;
+      }
+
+      .user-status {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--color-accent);
+        display: block;
+      }
+    }
+
+    .avatar-circle {
+      width: 40px;
+      height: 40px;
+      background-color: #f0f2f5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+
+      mat-icon {
+        font-size: 40px; // Aumentamos para que llene el círculo
+        width: 40px;
+        height: 40px;
+        color: var(--color-sidebar);
+      }
+    }
+
+    .chevron {
+      color: #94a3b8;
+      margin-left: 4px;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

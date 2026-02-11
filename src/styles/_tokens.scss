@@ -1,0 +1,36 @@
+// Paleta MedTech inspirada en el diseño elegido
+:root {
+    --color-bg-main: #F4F7F9;    // Fondo general de la app
+    --color-sidebar: #5D7A91;    // Azul grisáceo del Sidebar
+    --color-accent: #00BFA5;     // Turquesa para botones y activos
+    --color-white: #FFFFFF;
+    --color-text: #2c3e50;
+
+    --color-text-alt: #BDFFF6;
+
+    /* Header */
+    --header-height: 70px;
+    --header-color: --color-text;
+    --header-background-color: #ffffff;
+
+    /* Footer */
+    --footer-height: 48px;
+    --footer-color: #666;
+    --footer-background-color: #e9e9e9;
+
+    /* Toolbar */
+    --toolbar-color: --color-text;
+    --toolbar-background-color: #ffffff;
+
+    /* Sidebar */
+    --sidebar-color: #C6DCD9;
+    --sidebar-background-color: #5D7A91;
+
+    --sidebar-option-link-background-color: #FFFFFF;
+    --sidebar-option-link-color: #FFFFFF;
+    --sidebar-option-link-hover-color: #caddeb;
+    --sidebar-option-link-hover-background-color: --color-text;
+
+    --sidebar-option-active-link-color: #ffffff;
+    --sidebar-option-active-link-background-color: #7ca0bd;
+}

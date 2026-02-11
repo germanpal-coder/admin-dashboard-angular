@@ -3,6 +3,7 @@
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
+@use 'styles/_tokens';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -15,6 +16,10 @@ $admin-dashboard-theme: mat.define-theme((
     theme-type: light,
     primary: mat.$azure-palette,
     tertiary: mat.$blue-palette,
+  ),
+  typography: (
+    brand-family: 'Nunito, Roboto, Arial, sans-serif',
+    plain-family: 'Nunito, Roboto, Arial, sans-serif',
   ),
   density: (
     scale: 0,
@@ -36,5 +41,11 @@ $admin-dashboard-theme: mat.define-theme((
 // @include mat.color-variants-backwards-compatibility($admin-dashboard-theme);
 /* You can add global styles to this file, and also import other style files */
 
+
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: 'Nunito', 'Roboto', "Helvetica Neue", sans-serif; 
+  background-color: var(--color-bg-main);
+}

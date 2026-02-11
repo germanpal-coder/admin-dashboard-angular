@@ -1,0 +1,54 @@
+.layout-container {
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.content {
+  padding: 16px;
+}
+
+
+.mat-sidenav {
+  width: 240px;
+  color: var(--sidebar-color);
+  background-color: var(--sidebar-background-color);
+  border:none;
+
+  // El título "Navigation"
+  [matSubheader] {
+    color: var(--sidebar-color);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  // El item de la lista (el <a>)
+  .mat-mdc-list-item {
+    --mdc-list-list-item-label-text-color: var(--sidebar-option-link-color);
+    --mdc-list-list-item-leading-icon-color: var(--sidebar-option-link-color);
+    
+    border-radius: 0px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--sidebar-option-link-hover-color);
+      --mdc-list-list-item-hover-state-layer-color: var(--sidebar-option-link-hover-color);
+      --mdc-list-list-item-hover-label-text-color: var(--sidebar-option-link-hover-color);
+    }
+
+    &:focus {
+      --mdc-list-list-item-focus-label-text-color: var(--sidebar-option-active-link-color) !important;
+    }
+
+    // Clase de Angular Router para el item activo
+    &.active-link {
+      background-color: var(--sidebar-option-active-link-background-color);
+      --mdc-list-list-item-label-text-color: var(--sidebar-option-active-link-color);
+      --mdc-list-list-item-leading-icon-color: var(--sidebar-option-active-link-background-color)
+      font-weight: 700;
+    }
+  }
+}
+
+.mat-drawer {
+  border-radius: 0;
+}
